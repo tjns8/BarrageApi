@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/cat/workspace/BarrageAPI/barragedemo/build/intermediates/exploded-aar/cn.nathin.barrage/barrage/0.0.3/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.0 rc2"
+        sha1="2b1e7914016c89f79d2ff2f9bcd1a55081cc3e86">
+        <dex dex="/home/cat/workspace/BarrageAPI/barragedemo/build/intermediates/pre-dexed/debug/cn.nathin.barrage-barrage-0.0.3_4599ce23ec50edb8580c5628b7c27668cd92c4de.jar" />
+    </item>
+    <item
+        jar="/home/cat/workspace/BarrageAPI/barragedemo/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="24.0.0 rc2"
+        sha1="d77c2da61fd98682a52d91ec8421490a00f6de1c">
+        <dex dex="/home/cat/workspace/BarrageAPI/barragedemo/build/intermediates/pre-dexed/debug/instant-run_5d0dd8671561c40304bb8e23a2ec92b6a4cb5a47.jar" />
+    </item>
+    <item
+        jar="/home/cat/workspace/BarrageAPI/barragedemo/build/intermediates/exploded-aar/com.zhy/okhttputils/2.3.8/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.0 rc2"
+        sha1="577362cf9733c850c554a5dcb780ffd7ef25c0b7">
+        <dex dex="/home/cat/workspace/BarrageAPI/barragedemo/build/intermediates/pre-dexed/debug/com.zhy-okhttputils-2.3.8_8456833b243103e16ca44a9969b38b62cc93d4a7.jar" />
+    </item>
+    <item
+        jar="/home/cat/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.2.0/f7873a2ebde246a45c2a8d6f3247108b4c88a879/okhttp-3.2.0.jar"
+        jumboMode="true"
+        revision="24.0.0 rc2"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="/home/cat/workspace/BarrageAPI/barragedemo/build/intermediates/pre-dexed/debug/okhttp-3.2.0_eb8acd0e2746216dc2e6d0756191caaa6195d65b.jar" />
+    </item>
+    <item
+        jar="/home/cat/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp/2.0.0/4c8d1536dba3812cc1592090dc20c47a4ed3c35e/okhttp-2.0.0.jar"
+        jumboMode="true"
+        revision="24.0.0 rc2"
+        sha1="4c8d1536dba3812cc1592090dc20c47a4ed3c35e">
+        <dex dex="/home/cat/workspace/BarrageAPI/barragedemo/build/intermediates/pre-dexed/debug/okhttp-2.0.0_62a5d31ed384020c01ec32274b5cfbe215741237.jar" />
+    </item>
+    <item
+        jar="/home/cat/workspace/BarrageAPI/barragedemo/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.0 rc2"
+        sha1="98b304f7239d1329258b05b1a7e26e4c3e16cdd7">
+        <dex dex="/home/cat/workspace/BarrageAPI/barragedemo/build/intermediates/pre-dexed/debug/instant-run-bootstrap_0ddac8d58319d7a8d959686f3cddd11c3ab47a12.jar" />
+    </item>
+    <item
+        jar="/home/cat/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
+        jumboMode="true"
+        revision="24.0.0 rc2"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/home/cat/workspace/BarrageAPI/barragedemo/build/intermediates/pre-dexed/debug/okio-1.6.0_d1aebc49e96b2986ef8fcb9e14a4d7798e964f88.jar" />
+    </item>
+
+</items>

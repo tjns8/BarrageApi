@@ -1,0 +1,64 @@
+$(function() {
+    $('#reg_form').ajaxForm({
+        url : '/user/FindPassword',
+        type : 'post',
+        dataType : 'json',
+        beforeSubmit : function() {
+            hideLoginErr();
+            var email = $('#email').val();
+            var code = $('#code').val();
+            // 验证
+            var checked = true;
+            if (email == '') {
+                showMsgAfterLogin('email', '请输入你的注册邮箱');
+                checked = false;
+                return false;
+            } else if (!(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(email))) {
+                showMsgAfterLogin('email', '请输入有效的Email地址');
+                checked = false;
+                return false;
+            }
+
+            if (code == '') {
+                showMsgAfterLogin('code', '请输入验证码');
+                checked = false;
+                return false;
+            }
+
+            if(checked){
+                $('#find_progress').show();
+                $('input[type=submit]').attr('disabled', "disabled");
+            }
+            return checked;
+        },
+        success : function(data) {
+            if (data.code == '0000') {
+                window.location.href="/site/getpass/"+data.data;
+            } else {
+                if (data.code == '4001') {
+                    showMsgAfterLogin('code', data.msg); 
+                    con_code();    
+                } else {
+                    showMsgAfterLogin('email', data.msg);
+                    con_code();    
+                }
+            }
+            $('input[type=submit]').removeAttr('disabled');
+        },
+        error : function() {
+        }
+    });
+});
+
+
+
+//弹消息
+function showMsgAfterLogin(inputName, msg) {
+    $(".errorinfo[target=" + inputName + "]").html(msg);
+    $(".errorinfo[target=" + inputName + "]").fadeIn('fast');
+    $(".input[target=" + inputName + "]").addClass('error');
+}
+function hideLoginErr() {
+    $('.errorinfo').hide();
+    $(".input").removeClass('error');
+}

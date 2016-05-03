@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Access-Control-Allow-Origin"
+	content="http://nathin.cn">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="http://nathin.cn/download/web/barrage.js"> </script>
+<script type="text/javascript">
+
+	//demo测试
+	barrageApi.appkey="abc";
+	barrageApi.sid="saa";
+	barrageApi.startMove();
+
+	function testSend() {
+		var text = document.getElementById("testtext").value;
+		barrageApi.sendText(text);
+	}
+</script>
+
+<style type="text/css">
+#barrage {
+	width: 100%;
+	height: 200px;
+	background: #0f0;
+	text-align: right;
+	position: relative;
+	overflow: hidden;
+}
+
+#barrage * {
+	white-space: nowrap;
+	position: absolute;
+	height: 30px;
+	width: 500px;
+}
+</style>
+</head>
+<body>
+
+	<div id="barrage"></div>
+	<input type="text" id="testtext" />
+	<button onclick="testSend()">sendtext</button>
+</body>
+</html>

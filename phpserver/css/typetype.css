@@ -1,0 +1,171 @@
+@charset "utf-8";
+
+.phoneBox{ width:1040px; margin:0 auto;  padding-top: 39px;}
+.screen {
+    width: 360px;
+    position: relative;
+    height: 400px;
+    z-index: 2;
+    display: block;
+    -moz-border-radius: 1px;
+    -webkit-border-radius: 1px;
+    border-radius: 1px;
+    color: #222;
+    text-align: left;
+    padding-bottom: 10px;
+    background: #ffffff;
+}
+.screen1{ background: url(../images/newVersion/phone1.png) 0 0/360px 400px no-repeat;}
+.screen2{ margin-left: 320px;background: url(../images/newVersion/phone2.png) 0 0/360px 400px no-repeat;}
+
+.window {
+    position: relative;
+    width: 314px;
+    height: 310px;
+    margin-left: 23px;
+    margin-top: 90px;
+    }
+.window2 {margin-top: 65px;height: 335px;width: 318px;margin-left: 20px;}
+.title-bar {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    height: 32px;
+    background-color: #6b6b70;
+    color: #fff;
+    padding: 5px 8px 8px;
+    z-index: 1;
+    text-align: center;
+}
+
+
+.message-list {
+    position: relative;
+    height: 275px;
+    overflow: hidden;
+}
+.message-list2 {
+    height: 290px;
+}
+.message-list.scrollable {
+    /*overflow-y: scroll;*/
+    padding-right: 17px;
+}
+.message-input {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.title-bar .back-btn {
+    float: left;
+    font-size: 14px;
+}
+[class^="icon-"], [class*=" icon-"] {
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.message-list.scrollable .message-scroll {
+    position: relative;
+    height: 300px;
+}
+.message-list.scrollable .message-scroll.message-scroll2{ height: 324px;padding-top: 45px;}
+.message-scroll {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    min-height: 100%;
+    padding-top: 38px;
+    padding-bottom: 35px;
+}
+.message-input .text-input {
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    min-height: 25px;
+}
+.message-input .message-area,.message-input .message-area2 {
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 8px 10px;
+    padding-right: 28px;
+    font-size: 12px;
+    float: left;
+}
+.message-input .message-area span,.message-input .message-area2 span{
+    font-size: 12px;
+}
+
+.message-scroll li .userMsg{width: 70%; line-height: 16px;padding:5px 10px; background: dodgerblue;border-radius: 10px;color: white;float: right;margin-right: 10px;font-size: 12px;}
+.message-scroll li.myMsg .userMsg{background:#ffffff;color: #000000;}
+.message-scroll li .userMsg.imgMsg{padding-top: 10px;}
+.screen .message-scroll li .userLogo{width: 50px; height: 50px; border-radius: 25px;background:url("../images/newVersion/type/p1.png") no-repeat;background-size: cover; float: right;margin-right: 10px;}
+
+.nextShow1,.nextShow2{margin-top: 500px!important;}
+.screen .message-scroll .userMsg{ position: relative;}
+.screen .message-scroll li.youMsg .userMsg{float: left;margin-left: 10px;margin-right: 0;}
+.screen .message-scroll li .line1{margin-top: 6px; height: 40px; line-height: 30px; /*min-width: 106px;*/}
+.screen .message-scroll li.youMsg .userLogo{float: left;margin-right: 0;margin-left: 10px;background:url("../images/newVersion/type/p2.png") no-repeat; background-size: cover;}
+.screen2 .message-scroll li.youMsg .userLogo{background:url("../images/newVersion/type/p1.png");background-size: cover;}
+.screen2 .message-scroll li.myMsg .userLogo{background:url("../images/newVersion/type/p2.png");background-size: cover;}
+div.arrow-right {
+    width: 0px;
+    height: 0px;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 6px solid white;
+    font-size: 0px;
+    line-height: 0px;
+    position: absolute;
+    top: 50%;
+    right: -6px;
+    margin-top: -4px;
+}
+div.arrow-left {
+    width: 0px;
+    height: 0px;
+    border-bottom: 4px solid transparent;
+    border-top: 4px solid transparent;
+    border-right: 6px solid dodgerblue;
+    font-size: 0px;
+    line-height: 0px;
+    position: absolute;
+    top: 50%;
+    left: -6px;
+    margin-top: -4px;
+}
+
+
+.wake{ margin-top: 80px;position: absolute;width: 318px;opacity: 0;}
+.wake h2{color: #ffffff;font-size: 30px;text-align: center;font-weight: normal;}
+.wakeAll{padding: 10px 10px;margin: 0 auto;width: 330px;opacity: 0;}
+.anima{
+    animation: bcAnimate 0.5s linear 0s;
+    -webkit-animation:bcAnimate 0.5s linear 0s;
+    -moz-animation:bcAnimate 0.5s linear 0s;
+    -o-animation:bcAnimate 0.5s linear 0s;
+}
+.wakeAll img{width: 60px; height: 40px; border-radius: 10px; float: left;}
+.wakeBox{width: 220px;font-size: 12px;padding-left: 14px;color: #E0E0E0;}
+.wakeBox p.wakeTit{font-size: 14px; margin-top: 4px;}
+.wakeCon{width: 220px;white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis;overflow: hidden;}
+@-webkit-keyframes  bcAnimate{
+    0%{opacity:1;}
+    70%{background-color:rgba(255,255,255,0.1);opacity:1;}
+    90%{background-color:rgba(255,255,255,0.1);/*transform: scale(0.7);*/opacity:1;}
+    99%{background-color:rgba(255,255,255,0.1);/*transform: scale(0.9);*/opacity:1;}
+}
+
+/*.screen2 .message-list{visibility: hidden;}*/
+.message-scroll li .userMsg img{width: 100%;}
+.pR0{padding-right: 0!important;}
+.oS{overflow: scroll;}
+/*scrollCover*/
+.scrollCover1{ position: absolute; z-index: 100; width: 17px; height: 234px; top: 32px; left: 297px;}
+.scrollCover2{ position: absolute; z-index: 100; width: 17px; height: 258px; top: 32px; left: 301px;}

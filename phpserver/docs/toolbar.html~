@@ -1,0 +1,26 @@
+ <div class="container-fluid">
+        <div class="navbar-header"><span class="navbar-brand">弹云 SDK 0.1 文档</span></div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown"><a href="android.php#" data-toggle="dropdown" class="dropdown-toggle">快速入门</a>
+              <ul class="dropdown-menu">
+                <li><a href="index.php">基础概念</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a href="android.php#" data-toggle="dropdown" class="dropdown-toggle">Android</a>
+              <ul class="dropdown-menu">
+                <li><a href="android.php">Android 开发指南</a></li>
+                <li><a href="api/android/index.html" target="_blank"> API 文档</a></li>
+              </ul>
+            </li>
+<li class="dropdown"><a href="web.php#" data-toggle="dropdown" class="dropdown-toggle">Web</a>
+              <ul class="dropdown-menu">
+                <li><a href="web.php">Web 开发指南</a></li>
+                <li><a href="api/web/index.html" target="_blank"> API 文档</a></li>
+              </ul>
+            </li>
+            <li><a href="../bbs.php" target="_blank">反馈</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>

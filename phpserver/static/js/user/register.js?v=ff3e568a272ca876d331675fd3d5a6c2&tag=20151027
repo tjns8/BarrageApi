@@ -1,0 +1,164 @@
+//注册页面js文件
+$(function() {
+    $('#reg_form')
+        .ajaxForm(
+        {
+            url : '/user/RegistorUser',
+            type : 'post',
+            dataType : 'json',
+            beforeSubmit : function() {
+                hideLoginErr();
+                var name = $('#name').val();
+                var email = $('#email').val();
+                var password = $('#password').val();
+                var repassword = $('#repassword').val();
+                var mobile = $('#mobile').val();
+                var code = $('#code').val();
+                var vcode = $('#vcode').val();
+                var invite_code = $('#invite_code').val();
+                var channel =$("#channel").val();
+                var allow_open = $('#allow_open').is(":checked");
+                
+                // 验证
+                var checked = true;
+                if (name == '') {
+                    showMsgAfterLogin('name', '请输入您的公司或组织名');
+                    checked = false;
+                }
+                if (email == '') {
+                    showMsgAfterLogin('email', '请输入注册邮箱');
+                    checked = false;
+                }
+                var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9\-]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9\-]+\.[a-zA-Z]{2,3}$/;
+                if (!myreg.test(email)) {
+                    showMsgAfterLogin('email', '请输入有效的&nbsp;Email&nbsp;地址');
+                    checked = false;
+                }
+                if (password == '') {
+                    showMsgAfterLogin('password', '请至输入至少&nbsp;6&nbsp;个字符');
+                    checked = false;
+                }
+                if (repassword == '') {
+                    showMsgAfterLogin('repassword', '请输入确认密码');
+                    checked = false;
+                }
+                if (mobile == '') {
+                    showMsgAfterLogin('mobile', '请输入手机号码');
+                    checked = false;
+                }
+//                if (code == '') {
+//                    showMsgAfterLogin('code', '请输入手机验证码');
+//                    checked = false;
+//                }
+
+//                if(vcode == '') {
+//                    showMsgAfterLogin('vcode', '请输入验证码');
+//                    checked = false;
+//                }
+
+//                if(invite_code == '') {
+//                    showMsgAfterLogin('invite_code', '请输入邀请码');
+//                    checked = false;
+//                }
+
+                if( ''== channel) {
+                    showMsgAfterLogin('channel', '请选择一个途径类型');
+                    checked = false;
+                }
+                if(!allow_open){
+                    showMsgAfterLogin('allow_open', '请阅读并同意服务条款');
+                    checked = false;
+                }
+
+                if(checked){
+                    $('input[type=submit]').attr('disabled', "disabled");
+                }
+                return checked;
+            },
+            success : function(data) {
+                if (data.code == '0000') {
+                	var user_type = $("input[name='user_type']:checked").val();
+                	if(user_type==1){
+                		window.location.href='/user/emailValidate';
+                	}
+                    if(user_type==2){
+                    	window.location.href='/site/company';
+                    }
+                } else {
+                    showMsgAfterLogin(data.msg.target, data.msg.err);
+                    con_code();
+                }
+                $('input[type=submit]').removeAttr('disabled');
+            },
+            error : function() {
+            }
+        });
+});
+
+
+//弹消息
+function showMsgAfterLogin(inputName, msg) {
+    $(".errorinfo[target=" + inputName + "]").html(msg);
+    $(".errorinfo[target=" + inputName + "]").fadeIn('fast');
+    $(".input[target=" + inputName + "]").addClass('error');
+    if(inputName == 'channel'){
+        $('.chosen-default').addClass('error');
+    }
+}
+
+
+function hideLoginErr() {
+    $('.errorinfo').hide();
+    $(".input").removeClass('error');
+    $('.chosen-default').removeClass('error');
+}
+
+
+
+//发送手机验证码
+function sendMobile() {
+    var mobile = $('#mobile').val();
+    if(mobile && /^1+\d{10}$/.test(mobile)){
+        var disabled_btn = $('#send_mobile').attr('disabled');
+        if(disabled_btn != 'disabled') {
+            $.ajax({
+                type:'post',
+                url:'/user/SendMobileCode',
+                data:{mobile:mobile,tokenId:tokenId,token:token,random:Math.round((Math.random()) * 100000000)},
+                dataType:'json',
+                success:function(data){
+                    if(data.code == '0000') {
+                         updateTimeLabel(60);
+                         $('#send_mobile').attr('disabled','disabled').css('background','#b6b6b6');
+                        showMsgAfterLogin('mobile','短信发送成功');
+                    }else{
+                        showMsgAfterLogin('mobile',data.msg);
+                    }
+                    tokenId = data.data.tokenId;
+                    token   = data.data.token;
+                }
+            });
+        }else{
+        }
+    }else{
+        showMsgAfterLogin('mobile', '请输入正确的手机号码');
+    }
+}
+
+//发送短信按钮处理
+function updateTimeLabel(duration) {
+    //hideLoginErr();
+    var timeRemained = duration;
+    var timer = setInterval(function() {
+        $('#send_mobile').val(timeRemained + '秒后重新发送');
+        timeRemained -= 1;
+        if (timeRemained == -1) {
+            clearInterval(timer);
+            $('#send_mobile').val('重新发送').removeAttr('disabled').css('background','');
+        }
+    }, 1000);
+}
+
+$('#send_mobile').click(function(){
+	sendMobile();
+})
